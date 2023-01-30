@@ -9,8 +9,8 @@ class Numero(pygame.sprite.Sprite):
         #todo objeto precisa de um rect
         # rect é a representação de retangulo feita pelo pygame
         self.rect = self.image.get_rect()
-#        self.rect.x = # defina posicao em x
-#        self.rect.y = # defina posicao em y
+        self.rect.x = 0 # defina posicao em x
+        self.rect.y = 0 # defina posicao em y
 
 class Botao(pygame.sprite.Sprite):
     def __init__(self, assets, nome_do_jogo):
