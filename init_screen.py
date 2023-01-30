@@ -84,7 +84,7 @@ def init_screen(screen):
             text_rect.centery = btn.rect.centery
             screen.blit(btn_texto, text_rect)
 
-        tela_texto = dicionario_de_arquivos['font_media'].render("Minigames DesSoft", True, WHITE)
+        tela_texto = dicionario_de_arquivos['font_media'].render("Teste do chimpanzé", True, WHITE)
         text_rect = tela_texto.get_rect()
         text_rect.centerx = WIDTH / 2
         text_rect.centery = 200
