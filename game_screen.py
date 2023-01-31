@@ -6,6 +6,8 @@ def game_screen(window):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
     e = 1
+    ponto = 0
+    maximo = 5
     dicionario_de_arquivos = carrega_arquivos()
 
     lista_caixas = pygame.sprite.Group()
@@ -42,11 +44,19 @@ def game_screen(window):
                             caixa.image = dicionario_de_arquivos['caixa_correto']
                             caixa.image = pygame.transform.scale(caixa.image, (70, 70))
                             e += 1
+                            if len(lista_caixas) == caixa.numero:
+                                maximo +=1
+                                ponto += 1
+                                lista_caixas = pygame.sprite.Group() 
+                                for i in range(maximo):
+                                    caixa = Numero(dicionario_de_arquivos, i+1)
+                                    lista_caixas.add(caixa)
+                                    
                         else:
                             e = 1
                             lista_caixas = pygame.sprite.Group()
     
-                            for i in range(5):
+                            for i in range(maximo):
                                 caixa = Numero(dicionario_de_arquivos, i+1)
                                 lista_caixas.add(caixa)
                                     
@@ -60,6 +70,8 @@ def game_screen(window):
             window.blit(text, (caixa.rect.x + 5, caixa.rect.y + 5))
         text = font.render(str(quarentao), True, (0, 0, 255))
         window.blit(text, (0,0))
+        text = font.render(str(ponto), True, (0, 0, 255))
+        window.blit(text, (100,0))
         pygame.display.update()  # Mostra o novo frame para o jogador
         
             
