@@ -18,6 +18,7 @@ def init_screen(screen):
     x = espacamento
     print(espacamento)
     y = HEIGHT /2
+    
 
     for i in range(4):
         jogo = Botao(dicionario_de_arquivos, f"Jogo {i+1}")
